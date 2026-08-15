@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 const DirectorContainer = () => {
@@ -16,10 +17,10 @@ const DirectorContainer = () => {
 
     return (
         <>
-            <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
-                {/* all director components should render here depending on route */}
+                <Outlet context={{ directors, setDirectors }} />
+                
             </main>
         </>
     );
